@@ -18,5 +18,6 @@
   },
   "homepage": "https://github.com/LittoCats/react-native-path#readme",
   "author": "程巍巍",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "types": "./index.d.ts"
 }

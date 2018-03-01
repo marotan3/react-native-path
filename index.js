@@ -55,7 +55,7 @@ function _format(options) {
   } = options;
   var _dir = dir || root;
   var _base = base || `${name || ''}${/^\./.test(ext) ? '' : '.'}${ext || ''}`;
-  return normalize(`${_dir}/${_base}`);
+  return _normalize(`${_dir}/${_base}`);
 }
 
 function _isAbsolute(path) {
@@ -110,6 +110,10 @@ function _relative(base, path) {
   return Array(base.length).fill('..').concat(path).join('/');
 }
 
+function _join(paths) {
+  return _normalize(paths.join('/'));
+}
+
 function valid(path) {
   if (typeof path != 'string') {
     throw new TypeError('path must be string.');
@@ -144,5 +148,8 @@ module.exports = exports = {
   },
   relative(base, path) {
     return _relative(_normalize(base), _normalize(path))
+  },
+  join(paths) {
+    return _join(paths)
   }
 }
