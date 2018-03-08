@@ -12,7 +12,7 @@ export function dirname(path: string): string;
 export function extname(path: string): string;
 export function format(options: PathOptions): string;
 export function isAbsolute(path: string): boolean;
-export function parse(path: string): string;
+export function parse(path: string): PathOptions;
 export function resolve(): string;
 export function relative(from: string, to: string): string;
 export function join(paths: [string]): string;
